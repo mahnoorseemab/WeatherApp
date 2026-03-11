@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="weather_container">
+        <div class="searchbar">
+            <input type="text" placeholder="Search by City name">
+        </div>
+
+        <div class="local_time">
+            <span id="day"></span>
+            <span id="date"></span>
+        </div>
+
+        <section class="current_temperature">
+            <div class="location">
+                <span id="city"></span>
+                <span id="comma">,</span>
+                <span id="region"></span>
+                <span id="comma">,</span>
+                <span id="country"></span>
+            </div>
+
+            <div class="temp">
+                <div id="temp_C"></div>
+                <div id="temp_F"></div>
+            </div>
+        </section>
+
+        <section class="temp_credentials">
+            <div class="box" id="visibility"></div>
+            <div class="box" id="humidity"></div>
+            <div class="box" id="wind_status"></div>
+            <div class="box" id="feels_like">Feels Like</div>
+            <div class="box" id="UV"></div>
+        </section>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

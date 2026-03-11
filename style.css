@@ -1,0 +1,95 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0f1fa;
+}
+
+.weather_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    width: 90vw;
+    background-color: #B3E5FC;
+}
+
+.searchbar input {
+    margin-top: 30px;
+    padding: 20px;
+    width: 70vw;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.local_time {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+#day{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.current_temperature {
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 20px;
+    width: 70vw;
+    height: 20vh;
+    border-radius: 30px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.location{
+    padding: 10px;
+}
+
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#temp_C{
+    font-size: 70px;
+}
+
+#temp_F{
+    font-size: 20px;
+}
+
+.temp_credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 50px);
+    margin-top: 20px;
+    gap: 5px;
+    width: 70vw;
+}
+
+.box {
+    border: 2px solid black;
+
+}
+
+#visibility {
+    grid-row: 1 / -1;
+}
+
