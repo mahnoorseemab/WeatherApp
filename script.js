@@ -3,11 +3,9 @@ let boxesdata
 let boxes
 
 
-
-async function default_temp() {
+async function current_temp(location) {
     try {
-        const response = await fetch("https://api.weatherapi.com/v1/current.json?key=9e8a87285be44e4188a180754260403&q=Rawalpindi")
-
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=9e8a87285be44e4188a180754260403&q=${location}`)
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`)
         }
@@ -33,48 +31,22 @@ async function default_temp() {
         console.log(error.message)
     }
 }
-default_temp()//bydefault rawalpindi ka hi show ho gaaa
+//default call
+current_temp("Rawalpindi")
 
+//search call
 let input = document.getElementById("search_input")
 input.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        current_temp()
+        current_temp(document.getElementById("search_input").value)
     }
 })
 
 
-async function current_temp() {
-    try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=9e8a87285be44e4188a180754260403&q=${document.getElementById("search_input").value}`)
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`)
-        }
-
-        const data = await response.json()
-        document.getElementById("city").innerText = data.location.name
-        document.getElementById("region").innerText = data.location.region
-        document.getElementById("country").innerText = data.location.country
-        document.getElementById("date").innerText = data.location.localtime
-        document.getElementById("day").innerText = setDay()
-        document.getElementById("temp_C").innerText = data.current.temp_c + " " + "°C"
-        document.getElementById("temp_F").innerText = data.current.temp_f + " " + "F"
-        document.getElementById("visibility").innerText = data.current.condition.text
-        document.getElementById("humidity").innerText = data.current.humidity + " " + "%"
-        document.getElementById("wind_status").innerText = data.current.wind_kph + " " + "kph"
-        document.getElementById("feels_like").innerText = data.current.feelslike_c + " " + "°C"
-        document.getElementById("heatindex_c").innerText = data.current.heatindex_c + " " + "°C"
-        document.getElementById("lat").innerText = data.location.lat + "°"
-        document.getElementById("lon").innerText = data.location.lon + "°"
-        console.log(data)
-    }
-    catch (error) {
-        console.log(error.message)
-    }
-}
 
 
 //By-default rawalpindi's data will be displayed
-async function default_forecast_temp() {
+async function forecast_temp() {
     try {
         const response = await fetch("https://api.weatherapi.com/v1/forecast.json?key=9e8a87285be44e4188a180754260403&q=Rawalpindi&days=14")
         if (!response.ok) {
@@ -153,7 +125,7 @@ async function default_forecast_temp() {
     }
 }
 
-default_forecast_temp()
+forecast_temp()
 
 
 function setDay() {
@@ -185,7 +157,6 @@ function setDay() {
     console.log(d)
 }
 
-
 function twelvehrsformat(hour) {
     let time;
     if (hour == "00") {
@@ -202,3 +173,19 @@ function twelvehrsformat(hour) {
         return time
     }
 }
+
+// function getLocation() {
+//     navigator.geolocation.getCurrentPosition(
+//         function(position) {
+//             const lat = position.coords.latitude
+//             const lon = position.coords.longitude
+//             current_temp(`${lat},${lon}`)//user permission dy ga tu uski location ka weather show ho jaye gaaa......
+//         }
+//         function(error) {
+//             console.log(error)
+//             current_temp("Rawalpindi")//agar user permission nahi dy ga tu uski location ka weather show nahi ho gaa.....
+//         }
+//     )
+// }
+
+// function getLocation()

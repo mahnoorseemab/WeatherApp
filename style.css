@@ -52,9 +52,7 @@ body {
 }
 
 .current_temperature {
-    background-image: url("./images/img1.jpeg");
-    background-size: cover;
-    background-position: center;
+    position: relative;
     margin-top: 20px;
     padding: 20px;
     height: 27vh;
@@ -66,12 +64,24 @@ body {
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+.current_temperature::before {
+    content: '';
+    position: absolute;
+    background-image: url("./images/img1.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    inset: 0;
+    z-index: 0;
+}
+
 .location {
     font-weight: 500;
     margin-left: 5px;
     padding: 7px 15px;
     border-radius: 55px;
     font-size: 18px;
+    z-index: 1;
 }
 
 .temp {
@@ -79,20 +89,24 @@ body {
     flex-direction: column;
     margin-top: auto;
     gap: 5px;
+    z-index: 1;
 }
 
 #temp_C {
     font-size: 80px;
+    z-index: 1;
 }
 
 #visibility {
     margin-left: 20px;
     font-size: 15px;
+    z-index: 1;
 }
 
 #temp_F {
     font-size: 25px;
     margin-left: 20px;
+    z-index: 1;
 }
 
 .temp_credentials {
