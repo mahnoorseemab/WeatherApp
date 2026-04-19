@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <div class="weather_container">
+    <div class="left">
         <div class="searchbar">
-            <input type="text" placeholder="Search by City name">
+            <input id="search_input" type="text" placeholder="Search your location">
         </div>
+
 
         <div class="local_time">
             <span id="day"></span>
@@ -30,17 +31,42 @@
 
             <div class="temp">
                 <div id="temp_C"></div>
+                <div id="visibility"></div>
                 <div id="temp_F"></div>
             </div>
         </section>
 
         <section class="temp_credentials">
-            <div class="box" id="visibility"></div>
-            <div class="box" id="humidity"></div>
-            <div class="box" id="wind_status"></div>
-            <div class="box" id="feels_like">Feels Like</div>
-            <div class="box" id="UV"></div>
+            <div class="box">
+                <span class="box1">Humidity</span>
+                <span id="humidity"></span>
+            </div>
+            <div class=" box">
+                <span class="box1">Wind Status</span>
+                <span id="wind_status"></span>
+            </div>
+            <div class="box">
+                <span class="box1">Feels Like</span>
+                <span id="feels_like"></span>
+            </div>
+            <div class="box">
+                <span class="box1">Heat Index</span>
+                <span id="heatindex_c"></span>
+            </div>
+            <div class="box">
+                <span class="box1">Latitude</span>
+                <span id="lat"></span>
+            </div>
+            <div class="box">
+                <span class="box1">Longitude</span>
+                <span id="lon"></span>
+            </div>
         </section>
+    </div>
+
+
+    <div class="right">
+        <div class="forecast">Forecast</div>
     </div>
 
 
@@ -50,3 +76,5 @@
 </body>
 
 </html>
+
+
