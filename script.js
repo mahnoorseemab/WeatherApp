@@ -2,7 +2,6 @@
 let boxesdata
 let boxes
 
-
 async function current_temp(location) {
     try {
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=9e8a87285be44e4188a180754260403&q=${location}`)
@@ -41,9 +40,6 @@ input.addEventListener("keydown", (event) => {
         current_temp(document.getElementById("search_input").value)
     }
 })
-
-
-
 
 //By-default rawalpindi's data will be displayed
 async function forecast_temp() {
